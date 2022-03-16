@@ -1,9 +1,9 @@
 const express = require('express')
 const config = require('./config/config');
 const cors = require('cors')
+const conn = require("./database/mySql");
 
 const app = express()
-const conn = require("./database/sqlServer");
 
 // // Config JSON response
  app.use(express.json())
@@ -27,9 +27,3 @@ conn
     app.listen(5000)
   })
   .catch((err) => console.log(err))
-
-
-
-// app.listen(5000);
-// console.log(`Server is listening on : http://localhost:${5000}`)
-// console.log(config)
