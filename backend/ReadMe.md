@@ -102,6 +102,12 @@ Rodando migrations:
 npx sequelize-cli db:migrate
 
 ```
+Desfazer um migrations:
+```
+
+npx sequelize-cli db:migrate:undo
+
+```
 Gerando seeds:
 ```
 

@@ -10,8 +10,8 @@ const config = {
   password: process.env.DB_PWD,
   database: process.env.DB_NAME,
   define: {
-    timestamps: true,
-    underscore:false
+    timestamps: true
+    // underscore:false
   }
 }
 
