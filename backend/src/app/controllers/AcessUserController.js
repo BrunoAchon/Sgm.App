@@ -18,7 +18,6 @@ class AcessUserController {
       acess_user,
       token: acess_user.generateToken(),
     });
-    //return res.status(200).send()
   }
 }
 module.exports = new AcessUserController();
