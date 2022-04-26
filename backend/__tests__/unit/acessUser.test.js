@@ -10,7 +10,9 @@ describe("User", () => {
   });
 
   it("should encrypt user password", async () => {
-    const user = await AcessUser.create("User", {
+    const user = await AcessUser.create({
+      name: "bruno achon",
+      email: "brunoachon@hotmail.com",
       password: "FVN3UUR398HIERNC2929ENF2NC",
     });
 

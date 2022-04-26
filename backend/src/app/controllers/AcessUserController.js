@@ -1,23 +1,24 @@
-const Task = require("../models");
+const { AcessUser } = require("../models");
 
 class AcessUserController {
-  async store(req, res) {
-    const { email, password } = req.body;
+  async login(req, res) {
+    return res.status(200).send();
+    // const { email, password } = req.body;
 
-    const acess_user = await Acess_User.findOne({ where: { email } });
+    // const user = await AcessUser.findOne({ where: { email } });
 
-    if (!acess_user) {
-      return res.status(401).json({ message: "User not found" });
-    }
+    // if (!user) {
+    //   return res.status(401).json({ message: "User not found" });
+    // }
 
-    if (!(await acess_user.checkPassword(password))) {
-      return res.status(401).json({ message: "Incorrect password" });
-    }
+    // if (!(await user.checkPassword(password))) {
+    //   return res.status(401).json({ message: "Incorrect password" });
+    // }
 
-    return res.json({
-      acess_user,
-      token: acess_user.generateToken(),
-    });
+    // return res.json({
+    //   user,
+    //   token: user.generateToken(),
+    // });
   }
 }
 module.exports = new AcessUserController();
