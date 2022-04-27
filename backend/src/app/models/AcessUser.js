@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
   const AcessUser = sequelize.define(
     "AcessUser",
     {
-      user_name: DataTypes.STRING,
+      name: DataTypes.STRING,
       email: DataTypes.STRING,
       email_confirm: DataTypes.BOOLEAN,
       password: DataTypes.VIRTUAL,
@@ -20,12 +20,9 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       hooks: {
-        beforeSave: async (acess_user) => {
-          if (acess_user.password) {
-            acess_user.password_hash = await bcrypt.hash(
-              acess_user.password,
-              8
-            );
+        beforeSave: async (user) => {
+          if (user.password) {
+            user.password_hash = await bcrypt.hash(user.password, 8);
           }
         },
       },

@@ -38,7 +38,7 @@ module.exports = {
       },
       phone: {
         type: Sequelize.STRING,
-        allowNull: false,
+        allowNull: true,
       },
       phone_confirm: {
         type: Sequelize.BOOLEAN,
